@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits</title>
+  <title>AMSnet 2.0: A Large AMS Database with AI Segmentation for Net Detection</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -61,8 +61,15 @@
                   <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Ze Zhang</a><sup>2</sup>*,</span>
                   <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=UDzaFPIAAAAJ&hl=en" target="_blank">Hongyang Wang</a><sup>3</sup>*,</span>
-                  </span>
-                  </div>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=m5NipB4AAAAJ&hl=en" target="_blank">Yichen Shi</a><sup>1</sup>*,</span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=m5NipB4AAAAJ&hl=en" target="_blank">Yichen Shi</a><sup>1</sup>*,</span>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=m5NipB4AAAAJ&hl=en" target="_blank">Yichen Shi</a><sup>1</sup>*,</span>
+                          <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=m5NipB4AAAAJ&hl=en" target="_blank">Yichen Shi</a><sup>1</sup>*,</span>
+                                </div>
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University, EIT</span>
@@ -157,24 +164,22 @@
     <h2 class="title is-3">Abstract</h2>
     <div class="content">
       <p>
-        Analog/Mixed-Signal (AMS) circuits play a critical role in the integrated circuit (IC) industry. 
-        However, automating AMS circuit design has remained a longstanding challenge due to its difficulty and complexity. 
-        Recent advances in Multi-modal Large Language Models (MLLMs) offer promising potential for supporting AMS circuit analysis and design. 
-        However, current research typically evaluates MLLMs on isolated tasks within the domain, 
-        lacking a comprehensive benchmark that systematically assesses model capabilities across diverse AMS-related challenges.
-      </p>
-      <p>
-        To address this gap, we introduce <strong>AMSbench</strong>, a benchmark suite designed to evaluate MLLM performance across critical tasks 
-        including circuit schematic perception, circuit analysis, and circuit design. 
-        AMSbench comprises approximately 8000 test questions spanning multiple difficulty levels and assesses eight prominent models, 
-        encompassing both open-source and proprietary solutions such as Qwen 2.5-VL and Gemini 2.5 Pro.
-      </p>
-      <p>
-        Our evaluation highlights significant limitations in current MLLMs, particularly in complex multi-modal reasoning and sophisticated circuit design tasks. 
-        These results underscore the necessity of advancing MLLMs’ understanding and effective application of circuit-specific knowledge, 
-        thereby narrowing the existing performance gap relative to human expertise and moving toward fully automated AMS circuit design workflows.
-        Our data is released at 
-        <a href="https://huggingface.co/datasets/wwhhyy/AMSBench" target="_blank">this URL</a>.
+        Abstract—Multimodal large language models (MLLM) strug
+        gle to understand circuit schematics due to their limited recog
+        nition capabilities. This could be attributed to the lack of high
+        quality schematic-netlist training data. Existing work such as
+        AMSnet applies schematic parsing to generate netlists. However,
+        these methods rely on hard-coded heuristics and are difficult to
+        apply to complex or noisy schematics in this paper. We therefore
+        propose a novel net detection mechanism based on segmentation
+        with high robustness. The proposed method also recovers posi
+        tional information, allowing digital reconstruction of schematics.
+        We then expand the AMSnet dataset with schematic images from
+        various sources and create AMSnet 2.0. AMSnet 2.0 contains
+        2,686 circuits with schematic images, Spectre-formatted netlists,
+        OpenAccess digital schematics, and positional information for
+        circuit components and nets, whereas AMSnet only includes 792
+        circuits with SPICE netlists but no digital schematics.
       </p>
     </div>
   </div>
