@@ -187,148 +187,135 @@
 </section>
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mmmu">
-      <span class="mmmu">AMSBench Benchmark</span>
-    </h1>
-  </div>
-</section>
-
-
-  
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/rada.png" alt="AMSbench Teaser"
-           style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-      Performance across MLLMs in various tasks.
-    </h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/data_collection.png" alt="AMSbench Teaser"
-           style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-      Details of AMSBench Data Collection.
-    </h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/question_generation.png" alt="AMSbench Teaser"
-           style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-       Details of AMSBench Question Generation.
-    </h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/tab_perception.png" alt="AMSbench Teaser"
-           style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-       Results of AMSBench Perception Task.
-    </h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/tab_multitask.png" alt="AMSbench Teaser"
-           style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-       Results of AMSBench various Task.
-    </h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/tab_design_tb.png" alt="AMSbench Teaser"
-           style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-       Results of AMSBench various Task.
-    </h2>
-  </div>
-</section>
-
 <section class="section">
-  <div class="columns is-centered has-text-centered">
-    <h2 class="title is-1 mmmu">
-      <span class="mmmu">Examples of various tasks</span>
-    </h2>
-  </div>
-</section>
-  
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-          <h2 class="subtitle has-text-centered">
-            Examples of Perception Task.
-          </h2>
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Motivation: The Challenge for AI in Circuit Understanding</h2>
+        <div class="content has-text-justified">
+          <p>
+            Although Multimodal Large Language Models (MLLMs) have shown powerful capabilities in many fields, they struggle to understand and parse professional circuit schematics.  This is largely due to the lack of high-quality, large-scale "schematic-netlist" paired data for training.  Existing methods for schematic parsing, such as those used in AMSnet 1.0, often rely on hard-coded heuristics, making them difficult to apply to complex or noisy real-world schematics. 
+          </p>
         </div>
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/partition.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-          <h2 class="subtitle has-text-centered">
-            Examples of Partition Task.
-          </h2>
+        <div class="content has-text-centered">
+            <img src="static/images/noisy-schematics.png" alt="Noisy schematics with markings and highlights" style="width: 70%;"/>
+            <p class="mt-2 is-size-6 has-text-grey">
+              Fig. 2: Examples of noisy schematics with overlaid markings (a) and partial highlighting (b), which are challenging for traditional methods. 
+            </p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-        <h2 class="subtitle has-text-centered">
-         Examples of Reasoning Task.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-      <h2 class="subtitle has-text-centered">
-        Examples of Function Task.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Our Approach: A Robust Segmentation-Based Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            To overcome the limitations of traditional methods, we propose a novel, deep-learning-based pipeline for schematic parsing. This pipeline not only generates netlists but also recovers positional information to reconstruct editable digital schematics. 
+          </p>
+        </div>
+
+        <div class="content has-text-centered" style="margin-top: 2rem;">
+            <h3 class="title is-4">Core Technique: Two-Stage Net Detection</h3>
+            <p class="has-text-justified">
+              The core of our method is an innovative two-stage approach for net detection, which significantly improves the accuracy and robustness of identifying wires from complex images. In the first stage, we use a semantic segmentation network (U-Net) to produce a "mask" of all wire pixels, separating them from the background and other elements.  In the second stage, we post-process this wire mask, especially at intersection points, using intelligent split-and-merge operations to precisely delineate wire segments belonging to different nets.  This approach eliminates the need for bounding box proposals, fundamentally improving segmentation accuracy. 
+            </p>
+            <img src="static/images/net-detection-method.png" alt="Two-stage net detection method" style="width: 90%; margin-top: 1rem;"/>
+            <p class="mt-2 is-size-6 has-text-grey">
+              Fig. 4: Our proposed two-stage net detection method. (a) Semantic segmentation to extract all wires. (b) Split and merge operations at intersection points to identify individual nets. 
+            </p>
+        </div>
+
+        <div class="content has-text-centered" style="margin-top: 2rem;">
+            <h3 class="title is-4">Handling Noise with Data Augmentation</h3>
+            <p class="has-text-justified">
+                To enable our model to handle real-world schematics with annotations or markings, we employ a data augmentation technique using mocked markings. During training, we randomly generate rectangles and text markings over clean schematics while keeping the net mask labels unchanged.  After this augmented training, our model can successfully "see through" these mocked markings and accurately detect the underlying wires, greatly enhancing its robustness in practical application scenarios. 
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered" style="margin-top: 3rem;">
+        <div class="column is-full-width">
+          <h2 class="title is-3">The AMSnet 2.0 Dataset</h2>
+          <div class="content has-text-justified">
+            <p>
+                We construct and release AMSnet 2.0, a large-scale, multimodal dataset for analog and mixed-signal circuits.  It contains 2,686 circuits, providing schematic images, Spectre-formatted netlists, OpenAccess digital schematics, and positional information for all components and net segments.  In comparison, the original AMSnet only included 792 circuits with SPICE netlists and no digital schematics.  This dataset will provide a solid foundation for training more capable AI models for circuit understanding.
+            </p>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="content has-text-centered">
+                  <img src="static/images/distribution-complexity.png" alt="AMSnet 2.0 Complexity Distribution"/>
+                  <p class="mt-2 is-size-6 has-text-grey">
+                    Fig. 8: Distribution of schematic complexity by the number of elements and nets. 
+                  </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="content has-text-centered">
+                  <img src="static/images/distribution-elements.png" alt="AMSnet 2.0 Element Type Distribution"/>
+                  <p class="mt-2 is-size-6 has-text-grey">
+                    Fig. 9: Distribution of schematic element types in the dataset.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered" style="margin-top: 3rem;">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experimental Results</h2>
+          <div class="content has-text-justified">
+            <p>
+                We evaluated our method on a test set containing 80 easy, 70 medium, and 50 hard schematics.  We use the F1 score as the evaluation metric and compare our U-Net-based approach against the YOLOv11-seg model, which performs direct instance segmentation.  As shown in the table below, our method achieves significantly better performance across all difficulty levels.
+            </p>
+          </div>
+          <div class="content">
+            <h4 class="title is-4 has-text-centered">Netlist Generation F1 Score (%)</h4>
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th class="has-text-centered">Model</th>
+                  <th class="has-text-centered">Easy</th>
+                  <th class="has-text-centered">Medium</th>
+                  <th class="has-text-centered">Hard</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="has-text-centered"><strong>U-Net (Ours)</strong> </td>
+                  <td class="has-text-centered"><strong>90.19</strong> </td>
+                  <td class="has-text-centered"><strong>84.17</strong> </td>
+                  <td class="has-text-centered"><strong>80.39</strong> </td>
+                </tr>
+                <tr>
+                  <td class="has-text-centered">YOLOv11-seg </td>
+                  <td class="has-text-centered">83.62 </td>
+                  <td class="has-text-centered">71.10 </td>
+                  <td class="has-text-centered">73.11 </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-2 is-size-6 has-text-centered has-text-grey">
+                Table I: F1 score comparison for the netlist generation task. 
+            </p>
+          </div>
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+              <img src="static/images/results-examples.png" alt="AMSnet 2.0 Results on Easy, Medium, and Hard splits"/>
+              <p class="mt-2 is-size-6 has-text-grey">
+                Fig. 5: Results for element detection, net detection, and Spectre netlist generation from easy (a), medium (b), and hard (c) splits. 
+              </p>
+          </div>
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/reconstruction-results.png" alt="Reconstructed Schematics in OpenAccess format"/>
+            <p class="mt-2 is-size-6 has-text-grey">
+              Fig. 6: The digital schematics automatically reconstructed by our flow and displayed in Cadence Virtuoso, corresponding to the examples in Fig. 5. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
-<!-- End image carousel -->
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-    <figure class="image is-fullwidth">
-      <img src="static/images/data.png" alt="AMSbench Teaser"
-           style="width: 70%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <h2 class="subtitle has-text-centered mt-4">
-      Data statistics.
-    </h2>
-  </div>
-</section>
-
-
 
 
 <!-- Paper poster -->
