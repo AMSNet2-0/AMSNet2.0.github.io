@@ -39,23 +39,32 @@
 
   <link rel="stylesheet" href="static/css/index.css">
 
-<style>
-  #workflow-carousel .card-image {
-    /* 为所有轮播的图片容器设置一个固定的高度 */
-    height: 350px; 
-    /* 可选：为可能出现的空白区域设置一个浅色背景 */
-    background-color: #f9f9f9; 
-  }
-
-  #workflow-carousel .card-image img {
-    /* 让图片的高宽填充整个容器的尺寸 */
-    height: 100%;
-    width: 100%;
-    
-    /* 这是最关键的属性：它会缩放图片以完整显示，且不破坏其原始宽高比 */
-    object-fit: contain; 
-  }
-</style>
+  <style>
+    #workflow-carousel .item {
+      /* 让每个轮播项目的高度由其内容自然决定，而不是强制固定 */
+      height: auto;
+    }
+  
+    #workflow-carousel .card {
+      /* 确保卡片作为一个整体，高度也能自适应 */
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  
+    #workflow-carousel .card-image img {
+      /* 设置一个最大高度，防止图片过大，但允许它根据自身比例缩放 */
+      max-height: 350px; 
+      width: auto; /* 允许宽度自动调整以保持比例 */
+      margin: 0 auto; /* 让图片在容器内水平居中 */
+      display: block;
+    }
+  
+    #workflow-carousel .card-content {
+      /* 让文字内容区域可以自由伸展 */
+      flex-grow: 1;
+    }
+  </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
