@@ -39,36 +39,6 @@
 
   <link rel="stylesheet" href="static/css/index.css">
 
-  <style>
-    #workflow-carousel .item {
-      /* 让每个轮播项目的高度由其内容自然决定，而不是强制固定 */
-      height: auto;
-    }
-  
-    #workflow-carousel .card {
-      /* 确保卡片作为一个整体，高度也能自适应 */
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-  
-    #workflow-carousel .card-image img {
-      /* 设置一个最大高度，防止图片过大，但允许它根据自身比例缩放 */
-      max-height: 350px; 
-      width: auto; /* 允许宽度自动调整以保持比例 */
-      margin: 0 auto; /* 让图片在容器内水平居中 */
-      display: block;
-    }
-  
-    #workflow-carousel .card-content {
-      /* 让文字内容区域可以自由伸展 */
-      flex-grow: 1;
-    }
-
-    #workflow-carousel .card-content .content {
-    color: #4a4a4a !important; /* 强制使用深灰色文本 */
-}
-  </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -517,5 +487,51 @@
 
     <!-- End of Statcounter Code -->
 
+
+    <footer class="footer">
+    </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 找到轮播组件
+      var carouselElement = document.getElementById('workflow-carousel');
+      
+      if (carouselElement) {
+        // 初始化Bulma轮播
+        var carouselInstance = bulmaCarousel.attach('#workflow-carousel', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            pagination: true,
+            autoplay: false
+        });
+
+        // 关键步骤：当轮播初始化或切换幻灯片后，重新计算并设置高度
+        function adjustCarouselHeight() {
+          setTimeout(function() {
+            // 获取当前显示的那个幻灯片
+            var activeItem = carouselElement.querySelector('.carousel-item.is-active');
+            if (activeItem) {
+              // 获取该幻灯片内容的实际高度
+              var contentHeight = activeItem.scrollHeight;
+              // 将轮播轨道的高度设置为当前活动项的实际高度
+              var track = carouselElement.querySelector('.carousel-track');
+              if(track) {
+                track.style.height = contentHeight + 'px';
+              }
+            }
+          }, 100); // 延迟100毫秒确保动画和计算完成
+        }
+
+        // 页面加载时调整一次
+        adjustCarouselHeight();
+
+        // 每次幻灯片切换后都重新调整
+        carouselInstance[0].on('after:show', function(event) {
+          adjustCarouselHeight();
+        });
+      }
+    });
+  </script>
   </body>
-  </html>
+</html>
