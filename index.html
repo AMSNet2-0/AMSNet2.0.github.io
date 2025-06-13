@@ -186,6 +186,114 @@
   </div>
 </section>
 
+<section class="section" id="Workflow">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Our Workflow</h2>
+      
+      <div class="content has-text-centered">
+          <p class="has-text-justified">
+              Our core contribution is the development of an end-to-end automated pipeline. It takes schematic images as input and, through a series of AI-based parsing and processing steps, transforms them into machine-readable netlists and human-editable digital schematics. The diagram below provides a high-level overview of this process.
+          </p>
+          <figure class="image is-4by2">
+              <img src="fig1_platform.pdf" alt="Overall workflow of AMSnet 2.0">
+          </figure>
+          <p class="mt-2 is-size-6 has-text-grey">
+            Figure 1: Overview of the AMSnet 2.0 dataset construction and automated generation pipeline.
+          </p>
+      </div>
+
+      <div class="content has-text-centered" style="margin-top: 3rem;">
+          <h3 class="title is-4">Step-by-Step Pipeline Details</h3>
+          <div id="workflow-carousel" class="carousel results-carousel">
+              
+              <div class="item">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-2by1">
+                              <img src="static/images/workflow-step1-labeling.png" alt="Schematic Labeling">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <div class="media">
+                              <div class="media-content">
+                                  <p class="title is-4">Step 1: Data Annotation & Collection</p>
+                                  <p class="subtitle is-6">Manual Input & Expert Knowledge</p>
+                              </div>
+                          </div>
+                          <div class="content has-text-left">
+                              The process begins with high-quality data annotation. We developed a labeling platform where users can upload schematics, draw bounding boxes to label components (e.g., PMOS, NMOS), and trace all individual electrical nets. Furthermore, experts can label circuit functions, topologies, and other insights, providing invaluable data for training AI models. 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="item">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-2by1">
+                              <img src="static/images/workflow-step2-detection.png" alt="Device and Intersection Detection">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <div class="media">
+                              <div class="media-content">
+                                  <p class="title is-4">Step 2: Component & Intersection Detection</p>
+                                  <p class="subtitle is-6">Application of Object Detection Models</p>
+                              </div>
+                          </div>
+                          <div class="content has-text-left">
+                              We use a state-of-the-art object detection model (YOLOv11) to automatically identify all components (transistors, resistors, etc.) in the input schematic.  Unlike previous work, our approach also specifically detects wire intersections, recognizing whether it is an electrical junction (with a dot) or merely a visual crossover (no dot), which is critical for correct circuit parsing. 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="item">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-2by1">
+                              <img src="static/images/net-detection-method.png" alt="Wire Segmentation">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <div class="media">
+                              <div class="media-content">
+                                  <p class="title is-4">Step 3: Wire Segmentation</p>
+                                  <p class="subtitle is-6">Core Two-Stage Technique</p>
+                              </div>
+                          </div>
+                          <div class="content has-text-left">
+                              This is the core innovation of our pipeline. We employ a two-stage approach: first, a U-Net semantic segmentation network extracts all wire pixels from the complex background, creating a "wire mask".  Then, a set of post-processing algorithms intelligently splits and merges this mask at intersection points to precisely separate the different electrical nets. 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="item">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-2by1">
+                              <img src="static/images/workflow-step4-reconstruction.png" alt="Netlist and Schematic Generation">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <div class="media">
+                              <div class="media-content">
+                                  <p class="title is-4">Step 4: Netlist & Schematic Generation</p>
+                                  <p class="subtitle is-6">Final Output Generation</p>
+                              </div>
+                          </div>
+                          <div class="content has-text-left">
+                              After identifying all components, their pin locations, and the individual electrical nets, our tool automatically analyzes their connectivity. By determining which net intersects with or is nearest to each component pin, it establishes the complete circuit topology and generates an accurate Spectre-formatted netlist.  Simultaneously, using the coordinate information, the system reconstructs an editable digital schematic in formats like OpenAccess. 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
