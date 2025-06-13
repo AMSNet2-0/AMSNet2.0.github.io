@@ -37,6 +37,28 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <link rel="stylesheet" href="static/css/index.css">
+
+<style>
+  #workflow-carousel .card-image {
+    /* 为所有轮播的图片容器设置一个固定的高度 */
+    height: 350px; 
+    /* 可选：为可能出现的空白区域设置一个浅色背景 */
+    background-color: #f9f9f9; 
+  }
+
+  #workflow-carousel .card-image img {
+    /* 让图片的高宽填充整个容器的尺寸 */
+    height: 100%;
+    width: 100%;
+    
+    /* 这是最关键的属性：它会缩放图片以完整显示，且不破坏其原始宽高比 */
+    object-fit: contain; 
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -194,8 +216,8 @@
           <p class="has-text-justified">
               Our core contribution is the development of an end-to-end automated pipeline. It takes schematic images as input and, through a series of AI-based parsing and processing steps, transforms them into machine-readable netlists and human-editable digital schematics. The diagram below provides a high-level overview of this process.
           </p>
-          <figure class="image is-4by2">
-              <img src="fig1_platform.png" alt="Overall workflow of AMSnet 2.0">
+          <figure class="image ">
+              <img src="static/images/fig1_platform.png" alt="Overall workflow of AMSnet 2.0">
           </figure>
           <p class="mt-2 is-size-6 has-text-grey">
             Figure 1: Overview of the AMSnet 2.0 dataset construction and automated generation pipeline.
@@ -209,7 +231,7 @@
               <div class="item">
                   <div class="card">
                       <div class="card-image">
-                          <figure class="image is-2by1">
+                          <figure class="image ">
                               <img src="static/images/workflow-step1-labeling.png" alt="Schematic Labeling">
                           </figure>
                       </div>
@@ -230,7 +252,7 @@
               <div class="item">
                   <div class="card">
                       <div class="card-image">
-                          <figure class="image is-2by1">
+                          <figure class="image">
                               <img src="static/images/workflow-step2-detection.png" alt="Device and Intersection Detection">
                           </figure>
                       </div>
@@ -251,7 +273,7 @@
               <div class="item">
                   <div class="card">
                       <div class="card-image">
-                          <figure class="image is-2by1">
+                          <figure class="image">
                               <img src="static/images/net-detection-method.png" alt="Wire Segmentation">
                           </figure>
                       </div>
