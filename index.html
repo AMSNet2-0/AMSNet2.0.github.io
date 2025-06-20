@@ -276,12 +276,15 @@
 
 <section class="hero teaser">
   <div class="hero-body" style="padding: 0;">
+    <h2 class="title is-3 has-text-centered">
+      Pipeline Overview
+    </h2>
     <figure class="image is-fullwidth">
-      <img src="static/images/fig1_platform.png" alt="AMSbench Teaser"
-           style="width: 60%; height: auto; display: block; margin: 0 auto;">
+      <img src="static/images/workflow-step4-reconstruction.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
     </figure>
     <h2 class="subtitle has-text-centered mt-4">
-     Overview of the AMSnet 2.0 dataset construction and automated generation pipeline.
+    Overview of the AMSnet 2.0 dataset construction and automated generation pipeline. 
     </h2>
   </div>
 </section>
@@ -317,100 +320,26 @@
 
 <section class="section" id="Workflow">
   <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Our Workflow</h2>
-      
+      <h2 class="title is-3">Our Workflow</h2>
       <div class="content has-text-centered">
           <p class="has-text-justified">
               Our core contribution is the development of an end-to-end automated pipeline. It takes schematic images as input and, through a series of AI-based parsing and processing steps, transforms them into machine-readable netlists and human-editable digital schematics. The diagram below provides a high-level overview of this process.
           </p>
       </div>
+      <figure class="image is-fullwidth">
+        <img src="static/images/fig1_platform.png" alt="AMSbench Teaser"
+             style="width: 95%; height: auto; display: block; margin: 0 auto;">
+      </figure>
 
       <div class="content has-text-centered" style="margin-top: 3rem;">
-          <h3 class="title is-4">Step-by-Step Pipeline Details</h3>
-          <div id="workflow-carousel" class="carousel results-carousel">
-              
-              <div class="item">
-                  <div class="card">
-                      <div class="card-image">
-                          <figure class="image">
-                              <img src="static/images/workflow-step1-labeling.png" alt="Schematic Labeling">
-                          </figure>
-                      </div>
-                      <div class="card-content">
-                          <div class="media">
-                              <div class="media-content">
-                                  <p class="title is-4">Step 1: Data Annotation & Collection</p>
-                                  <p class="subtitle is-6">Manual Input & Expert Knowledge</p>
-                                  <p class="subtitle is-6">The process begins with high-quality data annotation. We developed a labeling platform where users can upload schematics, draw bounding boxes to label components (e.g., PMOS, NMOS), and trace all individual electrical nets. Furthermore, experts can label circuit functions, topologies, and other insights, providing invaluable data for training AI models. 
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+        <p class="has-text-justified">Our pipeline automates schematic analysis:</p>
 
-              <div class="item">
-                  <div class="card">
-                      <div class="card-image">
-                          <figure class="image">
-                              <img src="static/images/workflow-step2-detection.png" alt="Device and Intersection Detection">
-                          </figure>
-                      </div>
-                      <div class="card-content">
-                          <div class="media">
-                              <div class="media-content">
-                                  <p class="title is-4">Step 2: Component & Intersection Detection</p>
-                                  <p class="subtitle is-6">Application of Object Detection Models</p>
-                                  <p class="subtitle is-6">We use a state-of-the-art object detection model (YOLOv11) to automatically identify all components (transistors, resistors, etc.) in the input schematic.  Unlike previous work, our approach also specifically detects wire intersections, recognizing whether it is an electrical junction (with a dot) or merely a visual crossover (no dot), which is critical for correct circuit parsing. </p>
-
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="item">
-                  <div class="card">
-                      <div class="card-image">
-                          <figure class="image">
-                              <img src="static/images/net-detection-method.png" alt="Wire Segmentation">
-                          </figure>
-                      </div>
-                      <div class="card-content">
-                          <div class="media">
-                              <div class="media-content">
-                                  <p class="title is-4">Step 3: Wire Segmentation</p>
-                                  <p class="subtitle is-6">Core Two-Stage Technique</p>
-                                  <p class="subtitle is-6">This is the core innovation of our pipeline. We employ a two-stage approach: first, a U-Net semantic segmentation network extracts all wire pixels from the complex background, creating a "wire mask".  Then, a set of post-processing algorithms intelligently splits and merges this mask at intersection points to precisely separate the different electrical nets. </p>
-
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="item">
-                  <div class="card">
-                      <div class="card-image">
-                          <figure class="image">
-                              <img src="static/images/workflow-step4-reconstruction.png" alt="Netlist and Schematic Generation">
-                          </figure>
-                      </div>
-                      <div class="card-content">
-                          <div class="media">
-                              <div class="media-content">
-                                  <p class="title is-4">Step 4: Netlist & Schematic Generation</p>
-                                  <p class="subtitle is-6">Final Output Generation</p>
-                                  <p class="subtitle is-6">After identifying all components, their pin locations, and the individual electrical nets, our tool automatically analyzes their connectivity. By determining which net intersects with or is nearest to each component pin, it establishes the complete circuit topology and generates an accurate Spectre-formatted netlist.  Simultaneously, using the coordinate information, the system reconstructs an editable digital schematic in formats like OpenAccess. </p>
-
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+          <p class="has-text-justified">Annotation: Experts label components and nets on our platform.</p>
+          <p class="has-text-justified">Detection: A YOLO model identifies components and distinguishes between wire junctions and crossovers.</p>
+          <p class="has-text-justified">Segmentation: A U-Net isolates wire pixels, which are then separated into distinct nets.</p>
+          <p class="has-text-justified">Generation: The system analyzes connectivity to create a final Spectre netlist and an editable schematic.</p>
 
           </div>
-      </div>
   </div>
 </section>
 
@@ -549,7 +478,7 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
+      <h2 class="title">Paper</h2>
 
       <iframe  src="static/pdfs/AMSnet2_0+(2).pdf" width="100%" height="550">
           </iframe>
